@@ -1,9 +1,11 @@
 # MovieApp 
 
 
-# Demo Linl : https://pravinmovieapp.netlify.app 
+ ##Demo Linl: 
+ https://pravinmovieapp.netlify.app 
 
-# Git Repo : https://github.com/padolep/Movies-app-imdb.git
+ ##Git Repo: 
+ https://github.com/padolep/Movies-app-imdb.git
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
