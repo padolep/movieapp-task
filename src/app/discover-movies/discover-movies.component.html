@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="container mx-auto" *ngIf="!showLoader">
 
     <form class="flex items-center">
         <div class="flex m-auto">
@@ -49,10 +49,10 @@
                     class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6"
                     [src]="source.Poster" alt="Image Size 720x400"></figure>
             <div class="card-body">
-                <h2 class="card-title">{{source.Title}}</h2>
+                <h2 class="card-title">{{source.Title | titlecase}}</h2>
+                
+                <p>Released year : {{source.Year | date }}</p>
                 <p>Type : {{source.Type}}</p>
-                <p>Released year : {{source.Year}}</p>
-                <p>Released year : {{source.Date}}</p>
             </div>
             <div class="card-actions justify-center m-2">
                 <p class="leading-relaxed text-base" [innerHtml]="source.description"></p><span><a
@@ -71,3 +71,5 @@
     </footer>
 
 </div>
+
+<app-show-loader *ngIf="showLoader"></app-show-loader>

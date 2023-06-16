@@ -22,6 +22,8 @@ export class DiscoverMoviesComponent {
   public searchKey: any = '';
   moviesdetailForm!: FormGroup;
   searchValue: any = {};
+  public showLoader: boolean = false;
+
   params: any = {};
   constructor(private moviesapi: MoviesService, private router: Router) {}
 
@@ -47,6 +49,7 @@ export class DiscoverMoviesComponent {
     }
   }
   getMoviesList() {
+    this.showLoader = true;
     this.params = {
       page: this.page,
       searchKey: this.searchKey,
@@ -59,7 +62,9 @@ export class DiscoverMoviesComponent {
         this.totalResults = res?.totalResults;
         this.totalpage = this.totalResults / 10;
         console.log('this.sources', this.sources);
+        
       });
+      this.showLoader = false;
   }
 
   onReadMoreClick(event: any) {

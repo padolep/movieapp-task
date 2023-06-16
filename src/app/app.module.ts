@@ -8,12 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoviesDetailComponent } from './movies-detail/movies-detail.component';
 import { RouterModule } from '@angular/router';
 import { DiscoverMoviesComponent } from './discover-movies/discover-movies.component';
+import { ShowLoaderComponent } from './show-loader/show-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     MoviesDetailComponent, 
-    DiscoverMoviesComponent
+    DiscoverMoviesComponent, ShowLoaderComponent
   ],
   imports: [
     BrowserModule,
