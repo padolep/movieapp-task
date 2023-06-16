@@ -15,6 +15,10 @@ export class DiscoverMoviesComponent {
   totalResults: any;
   totalpage: any;
   page: number = 1;
+  public resultPerPage: any = 10;
+  public optionsPerPage: any = [10, 20, 50]
+  public totalRecords: number = 0;
+  public totalPage: number = 0;
   public searchKey: any = '';
   moviesdetailForm!: FormGroup;
   searchValue: any = {};
@@ -27,12 +31,17 @@ export class DiscoverMoviesComponent {
     if (this.searchKey) {
       this.getMoviesList();
       localStorage.removeItem('searchKey');
+    }else {
+      this.searchKey = 'abcd';
+      this.getMoviesList();
+     
+     
     }
   }
 
   onSearch(event: any) {
     console.log('event', event.target.value);
-    if (event?.target?.value?.length > 3) {
+    if (event?.target?.value?.length > 2) {
       this.searchKey = event?.target?.value;
       this.getMoviesList();
     }
@@ -59,6 +68,12 @@ export class DiscoverMoviesComponent {
     });
   }
 
+
+  recordPerPage(event : any) {
+    
+    this.resultPerPage = event.target.value;
+    
+  }
   prepage() {
     this.page--;
     this.getMoviesList();
