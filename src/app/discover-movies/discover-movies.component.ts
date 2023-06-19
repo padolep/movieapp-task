@@ -36,6 +36,7 @@ export class DiscoverMoviesComponent {
     }else {
       this.searchKey = 'abcd';
       this.getMoviesList();
+      this.searchKey=''
      
      
     }
@@ -43,7 +44,7 @@ export class DiscoverMoviesComponent {
 
   onSearch(event: any) {
     console.log('event', event.target.value);
-    if (event?.target?.value?.length > 2) {
+    if (event?.target?.value?.length > 1) {
       this.searchKey = event?.target?.value;
       this.getMoviesList();
     }
@@ -53,6 +54,7 @@ export class DiscoverMoviesComponent {
     this.params = {
       page: this.page,
       searchKey: this.searchKey,
+      
     };
     this.moviesapi
       .initSources(this.params)
@@ -72,6 +74,12 @@ export class DiscoverMoviesComponent {
       queryParams: { id: event.imdbID, searchKey: this.searchKey },
     });
   }
+  
+  searchMovie() {
+    this.page = 1;
+    this.getMoviesList();
+    // this.updateUrl();
+  }
 
 
   recordPerPage(event : any) {
@@ -79,6 +87,9 @@ export class DiscoverMoviesComponent {
     this.resultPerPage = event.target.value;
     
   }
+
+
+
   prepage() {
     this.page--;
     this.getMoviesList();
