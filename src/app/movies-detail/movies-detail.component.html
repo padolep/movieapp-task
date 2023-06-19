@@ -1,4 +1,4 @@
-<div class="flex items-center w-full px-4 py-10 bg-cover card bg-base-200">
+<div class="flex items-center w-full px-4 py-10 bg-cover card bg-base-200" *ngIf="!showLoader">
   <div class="card glass lg:card-side text-neutral-content">
     <figure class="p-6">
       <img [src]="movieData?.Poster" alt="" />
@@ -7,19 +7,19 @@
       <h1
         class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50"
       >
-        Movie Name :-{{ movieData?.Title | titlecase }}
+        Movie Name :-{{ movieData?.Title }}
       </h1>
       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        Actors:- {{ movieData?.Actors | titlecase }}
+        Actors:- {{ movieData?.Actors  }}
       </p>
       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        Released:- {{ movieData?.Released | date }}
+        Released:- {{ movieData?.Released }}
       </p>
       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        IMDB Rating:- {{ movieData?.imdbRating | number }}
+        IMDB Rating:- {{ movieData?.imdbRating  }}
       </p>
       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        Plot:- {{ movieData?.Plot | titlecase }}
+        Plot:- {{ movieData?.Plot  }}
       </p>
       <p class="text-xs text-neutral-500 dark:text-neutral-300">
         <button class="btn btn-outline btn-primary" (click)="back()">
@@ -29,3 +29,4 @@
     </div>
   </div>
 </div>
+<app-show-loader *ngIf="showLoader"></app-show-loader>

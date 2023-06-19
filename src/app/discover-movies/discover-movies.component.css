@@ -1,3 +1,12 @@
 .pagination{
     width : 97%;
 }
+
+.movie-poster{
+    height : 300px;
+    width : 295px;
+}
+
+.card{
+    height:455
+}

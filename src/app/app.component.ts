@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MoviesService } from './service/movies.service';
 import { Subscriber, debounceTime, distinctUntilChanged } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { NgModule } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
